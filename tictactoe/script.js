@@ -8,7 +8,8 @@ const gameboard = (function () {
     const blockbl = "";
     const blockbc = "";
     const blockbr = "";
-    return { blocktl, blocktc, blocktr, blockcl, blockc, blockcr, blockbl, blockbc, blockbr};
+    const blocks = [blocktl, blocktc, blocktr, blockcl, blockc, blockcr, blockbl, blockbc, blockbr]
+    return { blocktl, blocktc, blocktr, blockcl, blockc, blockcr, blockbl, blockbc, blockbr, blocks };
 })();
 
 function createPlayerOne (name) {
@@ -56,6 +57,23 @@ function gameOverCheck() {
         gameOver = true;
     }
 }
+
+const displayBoard = (function () {
+    const boardContainer = document.querySelector(".boardContainer");
+    gameboard.blocks.forEach((block, blockIndex) => {
+    const blockDiv = document.createElement("div");
+    blockDiv.classList.add("blockDiv");
+    blockDiv.setAttribute("id", Object.keys(gameboard)[blockIndex]);
+    boardContainer.appendChild(blockDiv);
+    })
+    const blockArray = document.querySelectorAll(".blockDiv");
+    blockArray.forEach((blockDiv) => {
+        blockDiv.addEventListener("click", function(e) {
+            console.log(e.target.id)
+            e.target.id = player.marker //id to var name
+        })
+    })
+})();
 
 const game = (function () {
     let gameOver = false;

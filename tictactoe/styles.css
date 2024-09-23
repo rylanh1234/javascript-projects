@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardContainer {
+    margin-top: 25vh;
+    height: 50vh;
+    width: 40vw;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 2px;
+    background-color: black;
+}
+
+.blockDiv {
+    background-color: white;
+}

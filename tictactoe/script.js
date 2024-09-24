@@ -5,7 +5,8 @@ const myGlobal = (function () {
     const playerTwoName = "Olive";
     const playerOne = createPlayerOne(playerOneName);
     const playerTwo = createPlayerTwo(playerTwoName);
-    return { gameOver, targetBlock, playerOne, playerTwo };
+    const winner = "";
+    return { gameOver, targetBlock, playerOne, playerTwo, winner };
 })();
 
 const gameboard = (function () {
@@ -37,29 +38,45 @@ function playRound(playerNum) {
 }
 
 function gameOverCheck() {
-    if (blocktl != "" && blocktl == blocktc && blocktl == blocktr) {
-        gameOver = true;
+    if (gameboard.blocktl != "" && gameboard.blocktl == gameboard.blocktc && gameboard.blocktl == gameboard.blocktr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blocktl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter); // [myGlobal.key, key's value]
     }
-    else if (blockcl != "" && blockcl == blockc && blockcl == blockcr) {
-        gameOver = true;
+    else if (gameboard.blockcl != "" && gameboard.blockcl == gameboard.blockc && gameboard.blockcl == gameboard.blockcr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blockcl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blockbl != "" && blockbl == blockbc && blockbl == blockbr) {
-        gameOver = true;
+    else if (gameboard.blockbl != "" && gameboard.blockbl == gameboard.blockbc && gameboard.blockbl == gameboard.blockbr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blockbl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blocktl != "" && blocktl == blockcl && blocktl == blockbl) {
-        gameOver = true;
+    else if (gameboard.blocktl != "" && gameboard.blocktl == gameboard.blockcl && gameboard.blocktl == gameboard.blockbl) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blocktl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blocktc != "" && blocktc == blockc && blocktc == blockbc) {
-        gameOver = true;
+    else if (gameboard.blocktc != "" && gameboard.blocktc == gameboard.blockc && gameboard.blocktc == gameboard.blockbc) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blocktc;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blocktr != "" && blocktr == blockcr && blocktr == blockbr) {
-        gameOver = true;
+    else if (gameboard.blocktr != "" && gameboard.blocktr == gameboard.blockcr && gameboard.blocktr == gameboard.blockbr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blocktr;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blocktl != "" && blocktl == blockc && blocktl == blockbr) {
-        gameOver = true;
+    else if (gameboard.blocktl != "" && gameboard.blocktl == gameboard.blockc && gameboard.blocktl == gameboard.blockbr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blocktl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
-    else if (blockbl != "" && blockbl == blockc && blockbl == blocktr) {
-        gameOver = true;
+    else if (gameboard.blockbl != "" && gameboard.blockbl == gameboard.blockc && gameboard.blockbl == gameboard.blocktr) {
+        myGlobal.gameOver = true;
+        winningLetter = gameboard.blockbl;
+        myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
 }
 
@@ -92,8 +109,23 @@ const displayBoard = (function () {
     })
 })();
 
-const playGame = (function () {
-    // while (myGlobal.gameOver == false) {
-    gameOverCheck();
-    // }
+const playGame = (function playGame() {
+    if (myGlobal.gameOver == false) {
+        gameOverCheck();
+    setTimeout(playGame, 100)
+    }
+    else {
+        const winnerMessageContainer = document.querySelector(".winnerMessageContainer");
+        const winnerMessage = document.createElement("div");
+        winnerMessage.classList.add("winnerMessage");
+        if (myGlobal.winner == "") {
+            winnerMessage.textContent = "It is a draw!";
+        }
+        else {
+            winnerMessage.textContent = "The winner is " + myGlobal.winner[1].name + "!";
+        }
+        winnerMessageContainer.appendChild(winnerMessage);
+    }
 })();
+
+// cant add when game over, input name, start/reset btn, end game if draw - round 10

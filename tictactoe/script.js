@@ -79,10 +79,12 @@ const displayBoard = (function () {
             if (gameboard[myGlobal.targetBlock] == "") {
                 if (playerTurn % 2 == 0) {
                     playRound(myGlobal.playerOne);
+                    e.target.textContent = myGlobal.playerOne.marker;
                     playerTurn += 1;
                 }
                 else {
                     playRound(myGlobal.playerTwo);
+                    e.target.textContent = myGlobal.playerTwo.marker;
                     playerTurn += 1;
                 }
             }

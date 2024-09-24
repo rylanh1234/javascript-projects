@@ -18,4 +18,6 @@ body {
 
 .blockDiv {
     background-color: white;
+    font-size: 8rem;
+    text-align: center;
 }

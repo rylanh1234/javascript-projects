@@ -1,3 +1,13 @@
+const myGlobal = (function () {
+    const gameOver = false;
+    const targetBlock = "";
+    const playerOneName = "Xavier";
+    const playerTwoName = "Olive";
+    const playerOne = createPlayerOne(playerOneName);
+    const playerTwo = createPlayerTwo(playerTwoName);
+    return { gameOver, targetBlock, playerOne, playerTwo};
+})();
+
 const gameboard = (function () {
     const blocktl = "";
     const blocktc = "";
@@ -23,11 +33,11 @@ function createPlayerTwo (name) {
 }
 
 function playRound(playerOne, playerTwo) {
-    if (targetBlock = "") {
-        targetBlock = playerOne.marker;
+    if (gameboard[myGlobal.targetBlock] = "") {
+        gameboard[myGlobal.targetBlock] = myGlobal.playerOne.marker;
     }
-    if (targetBlock = "") {
-        targetBlock = playerTwo.marker;
+    if (myGlobal.targetBlock = "") {
+        gameboard[myGlobaltargetBlock] = myGlobal.playerTwo.marker;
     }
 }
 
@@ -69,20 +79,14 @@ const displayBoard = (function () {
     const blockArray = document.querySelectorAll(".blockDiv");
     blockArray.forEach((blockDiv) => {
         blockDiv.addEventListener("click", function(e) {
-            console.log(e.target.id)
-            e.target.id = player.marker //id to var name
+            myGlobal.targetBlock = e.target.id;
         })
     })
 })();
 
-const game = (function () {
-    let gameOver = false;
-    const playerOneName = "Xavier";
-    const playerTwoName = "Olive";
-    const playerOne = createPlayerOne(playerOneName);
-    const playerTwo = createPlayerTwo(playerTwoName);
-    while (gameOver = false) {
-        playRound(playerOne, playerTwo)
+const playGame = (function () {
+    // while (myGlobal.gameOver == false) {
+        playRound(myGlobal.playerOne, myGlobal.playerTwo)
         gameOverCheck();
-    }
+    // }
 })();

@@ -38,6 +38,8 @@ function playRound(playerNum) {
 }
 
 function gameOverCheck() {
+    const currentBoard = Object.values(gameboard);
+
     if (gameboard.blocktl != "" && gameboard.blocktl == gameboard.blocktc && gameboard.blocktl == gameboard.blocktr) {
         myGlobal.gameOver = true;
         winningLetter = gameboard.blocktl;
@@ -77,6 +79,9 @@ function gameOverCheck() {
         myGlobal.gameOver = true;
         winningLetter = gameboard.blockbl;
         myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
+    }
+    else if (currentBoard.some(value => !value) == false) {
+                myGlobal.gameOver = true;
     }
 }
 
@@ -128,4 +133,4 @@ const playGame = (function playGame() {
     }
 })();
 
-// input name, start/reset btn, end game if draw - round 10
+// input name, start/reset btn

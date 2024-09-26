@@ -14,10 +14,41 @@ body {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     gap: 2px;
     background-color: black;
+    display: none;
 }
 
 .blockDiv {
     background-color: white;
     font-size: 8rem;
     text-align: center;
+}
+
+.winnerMessageContainer {
+    margin-top: 50px;
+}
+
+.winnerMessage {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#player_one_form,
+#player_two_form {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    gap: 20px;
+}
+
+input {
+    height: 1.5rem;
+}
+
+#player_one_submit,
+#player_two_submit {
+    height: 2rem;
+}
+
+#player_two_form {
+    display: none;
 }

@@ -1,8 +1,10 @@
 const myGlobal = (function () {
     const gameOver = false;
     const targetBlock = "";
-    const playerOneName = "Xavier";
-    const playerTwoName = "Olive";
+    // const playerOneName = "Xavier";
+    // const playerTwoName = "Olive";
+    const playerOneName = "";
+    const playerTwoName = "";
     const playerOne = createPlayerOne(playerOneName);
     const playerTwo = createPlayerTwo(playerTwoName);
     const winner = "";
@@ -133,4 +135,24 @@ const playGame = (function playGame() {
     }
 })();
 
-// input name, start/reset btn
+const playerNamesInput = (function () {
+    const nameInputOne = document.querySelector("#player_one_name");
+    const inputFormOne = document.querySelector("#player_one_form");
+    const nameInputTwo = document.querySelector("#player_two_name");
+    const inputFormTwo = document.querySelector("#player_two_form");
+    const boardContainer = document.querySelector(".boardContainer");
+    inputFormOne.addEventListener("submit", function(e) {
+        e.preventDefault();
+        myGlobal.playerOne.name = nameInputOne.value;
+        inputFormOne.style.display = "none";
+        inputFormTwo.style.display = "flex"
+    })
+    inputFormTwo.addEventListener("submit", function(e) {
+        e.preventDefault();
+        myGlobal.playerTwo.name = nameInputTwo.value;
+        inputFormTwo.style.display = "none";
+        boardContainer.style.display = "grid";
+    })
+})();
+
+// start/reset btn

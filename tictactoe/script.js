@@ -93,7 +93,7 @@ const displayBoard = (function () {
     blockArray.forEach((blockDiv) => {
         blockDiv.addEventListener("click", function (e) {
             myGlobal.targetBlock = e.target.id;
-            if (gameboard[myGlobal.targetBlock] == "") {
+            if (gameboard[myGlobal.targetBlock] == "" && myGlobal.gameOver == false) {
                 if (playerTurn % 2 == 0) {
                     playRound(myGlobal.playerOne);
                     e.target.textContent = myGlobal.playerOne.marker;
@@ -128,4 +128,4 @@ const playGame = (function playGame() {
     }
 })();
 
-// cant add when game over, input name, start/reset btn, end game if draw - round 10
+// input name, start/reset btn, end game if draw - round 10

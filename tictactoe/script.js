@@ -187,7 +187,8 @@ const startResetBtn = (function () {
                 myGlobal.gameOver = false;
                 playGame();
             }
-            myGlobal.gameOver = false;
         })
     })
 })();
+
+// could add a btn to reset names

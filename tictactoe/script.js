@@ -184,10 +184,10 @@ const startResetBtn = (function () {
                 blockDiv.textContent = "";
             })
             if (myGlobal.gameOver == true) {
+                myGlobal.gameOver = false;
                 playGame();
             }
             myGlobal.gameOver = false;
-
         })
     })
 })();

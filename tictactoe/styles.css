@@ -34,7 +34,7 @@ body {
 
 #player_one_form,
 #player_two_form {
-    display: flex;
+    display: none;
     font-size: 2rem;
     align-items: center;
     gap: 20px;
@@ -49,6 +49,12 @@ input {
     height: 2rem;
 }
 
-#player_two_form {
-    display: none;
+#start,
+#reset {
+    width: 100px;
+    height: 60px;
+    font-size: 2rem;
+    position: absolute;
+    top: 50px;
+    right: 50px;
 }

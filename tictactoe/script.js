@@ -83,7 +83,7 @@ function gameOverCheck() {
         myGlobal.winner = Object.entries(myGlobal).find(([playerNum, playerValue]) => playerValue.marker == winningLetter);
     }
     else if (currentBoard.some(value => !value) == false) {
-                myGlobal.gameOver = true;
+        myGlobal.gameOver = true;
     }
 }
 
@@ -116,10 +116,10 @@ const displayBoard = (function () {
     })
 })();
 
-const playGame = (function playGame() {
+function playGame() {
     if (myGlobal.gameOver == false) {
         gameOverCheck();
-    setTimeout(playGame, 100)
+        setTimeout(playGame, 100)
     }
     else {
         const winnerMessageContainer = document.querySelector(".winnerMessageContainer");
@@ -133,7 +133,7 @@ const playGame = (function playGame() {
         }
         winnerMessageContainer.appendChild(winnerMessage);
     }
-})();
+};
 
 const playerNamesInput = (function () {
     const nameInputOne = document.querySelector("#player_one_name");
@@ -141,13 +141,13 @@ const playerNamesInput = (function () {
     const nameInputTwo = document.querySelector("#player_two_name");
     const inputFormTwo = document.querySelector("#player_two_form");
     const boardContainer = document.querySelector(".boardContainer");
-    inputFormOne.addEventListener("submit", function(e) {
+    inputFormOne.addEventListener("submit", function (e) {
         e.preventDefault();
         myGlobal.playerOne.name = nameInputOne.value;
         inputFormOne.style.display = "none";
         inputFormTwo.style.display = "flex"
     })
-    inputFormTwo.addEventListener("submit", function(e) {
+    inputFormTwo.addEventListener("submit", function (e) {
         e.preventDefault();
         myGlobal.playerTwo.name = nameInputTwo.value;
         inputFormTwo.style.display = "none";
@@ -155,4 +155,39 @@ const playerNamesInput = (function () {
     })
 })();
 
-// start/reset btn
+const startResetBtn = (function () {
+    const start = document.querySelector("#start");
+    const inputFormOne = document.querySelector("#player_one_form");
+    start.addEventListener("click", () => {
+        playGame();
+        inputFormOne.style.display = "flex";
+        start.remove();
+        const reset = document.createElement("button");
+        reset.setAttribute("id", "reset");
+        reset.textContent = "Reset"
+        const body = document.querySelector("body");
+        body.appendChild(reset);
+        reset.addEventListener("click", () => {
+            gameboard.blocktl = "";
+            gameboard.blocktc = "";
+            gameboard.blocktr = "";
+            gameboard.blockcl = "";
+            gameboard.blockc = "";
+            gameboard.blockcr = "";
+            gameboard.blockbl = "";
+            gameboard.blockbc = "";
+            gameboard.blockbr = "";
+            const winnerMessageContainer = document.querySelector(".winnerMessageContainer");
+            winnerMessageContainer.innerHTML = "";
+            const blockArray = document.querySelectorAll(".blockDiv");
+            blockArray.forEach((blockDiv) => {
+                blockDiv.textContent = "";
+            })
+            if (myGlobal.gameOver == true) {
+                playGame();
+            }
+            myGlobal.gameOver = false;
+
+        })
+    })
+})();

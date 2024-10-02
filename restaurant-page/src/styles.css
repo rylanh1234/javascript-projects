@@ -1,4 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&family=Yusei+Magic&display=swap");
+
+* {
+    font-family: "Yusei Magic", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
+}
+
+header {
+    background-color: #fde68a;
+    height: 5vh;
+}
+
+footer {
+    background-color: #fde68a;
+    height: 5vh;
+}
+
+#content {
+    display: grid;
+    justify-content: center;
+    height: auto;
+    background-size: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* #background {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+} */
+
+#main {
+    padding: 50px;
+    background-color: #fde68a;
+    width: 55vw;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 20% 60% 20%;
+}
+
+.mainContainers {
+    background-color: #b45309;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#nameContainer {
+    width: 770px;
+    height: 80px;
+    grid-area: 1 / 1 / 2 / 4;
+    clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
+}
+
+#restaurantName {
+    padding: 5px;
+    width: 750px;
+    height: 60px;
+    background-color: #facc15;
+    font-family: "Potta One", cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;    
+    /* create octagonal shape by specifying the xy coord of the corners
+    start at topleft and clockwise */
+    clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
+}
+
+.mainGroup {
+    padding: 20px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
+    background-color: #ffcc23;
+}
+
+.label, #goldilocks {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.mainText {
+    font-size: 1rem;
+}
+
+#endorsementContainer,
+#hoursContainer,
+#locationContainer {
+    clip-path: polygon(11% 0%, 89% 0%, 100% 21%, 100% 79%, 89% 100%, 11% 100%, 0% 79%, 0% 21%);
+}
+
+#endorsementContainer {
+    width: 450px;
+    height: 225px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#endorsementGroup {
+    width: 410px;
+    height: 185px;
+    display: grid;
+    gap: 15px;
+}
+
+#endorsementGroup .mainText {
+    margin-top: 20px;
+}
+
+#endorsementGroup #goldilocks,
+#hoursGroup .label,
+#locationGroup .label {
+    margin-left: 50px;
+}
+
+#hoursContainer {
+    width: 450px;
+    height: 250px;
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+#hoursGroup {
+    width: 410px;
+    height: 210px;
+}
+
+#hoursGroup ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#locationContainer {
+    width: 500px;
+    height: 100px;
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+#locationGroup {
+    width: 460px;
+    height: 60px;
+}
+
+#locationGroup .mainText {
+    text-align: center;
 }

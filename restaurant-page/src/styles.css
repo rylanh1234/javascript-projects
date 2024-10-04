@@ -42,7 +42,7 @@ footer {
     height: auto;
     display: grid;
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: 20% 60% 20%;
+    justify-content: center;
 }
 
 .mainContainers {

@@ -54,6 +54,11 @@ footer {
     margin-bottom: 20px;
 }
 
+.menuContainer,
+.contactContainer {
+    display: none;
+}
+
 #nameContainer {
     width: 770px;
     height: 80px;

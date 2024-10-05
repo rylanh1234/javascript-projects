@@ -41,8 +41,10 @@ footer {
     width: 55vw;
     height: auto;
     display: grid;
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(4, auto); */
     justify-content: center;
+    justify-items: center;
 }
 
 .mainContainers {
@@ -59,14 +61,17 @@ footer {
     display: none;
 }
 
-#nameContainer {
+#nameContainer,
+#menuLabelContainer {
     width: 770px;
     height: 80px;
-    grid-area: 1 / 1 / 2 / 4;
+    /* grid-area: 1 / 1 / 2 / 4; */
     clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
+    margin-bottom: 100px;
 }
 
-#restaurantName {
+#restaurantName,
+#menuLabel {
     padding: 5px;
     width: 750px;
     height: 60px;
@@ -80,7 +85,8 @@ footer {
     clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
 }
 
-.mainGroup {
+.mainGroup,
+.itemGroup {
     padding: 20px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
     background-color: #ffcc23;
@@ -97,14 +103,15 @@ footer {
 
 #endorsementContainer,
 #hoursContainer,
-#locationContainer {
+#locationContainer,
+.itemContainer {
     clip-path: polygon(11% 0%, 89% 0%, 100% 21%, 100% 79%, 89% 100%, 11% 100%, 0% 79%, 0% 21%);
 }
 
 #endorsementContainer {
     width: 450px;
     height: 225px;
-    grid-area: 2 / 2 / 3 / 3;
+    /* grid-area: 2 / 2 / 3 / 3; */
 }
 
 #endorsementGroup {
@@ -127,7 +134,7 @@ footer {
 #hoursContainer {
     width: 450px;
     height: 250px;
-    grid-area: 3 / 2 / 4 / 3;
+    /* grid-area: 3 / 2 / 4 / 3; */
 }
 
 #hoursGroup {
@@ -145,7 +152,7 @@ footer {
 #locationContainer {
     width: 500px;
     height: 100px;
-    grid-area: 4 / 2 / 5 / 3;
+    /* grid-area: 4 / 2 / 5 / 3; */
 }
 
 #locationGroup {
@@ -155,4 +162,54 @@ footer {
 
 #locationGroup .mainText {
     text-align: center;
+}
+
+.typeContainer {
+    height: 80px;
+    width: 350px;
+    clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
+}
+
+.itemType {
+    padding: 5px;
+    height: 60px;
+    line-height: 60px;
+    width: 330px;
+    background-color: #ffcc23;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
+    font-family: "Potta One", cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.itemContainer {
+    height: 515px;
+    width: 465px;
+}
+
+.itemGroup {
+    height: 475px;
+    width: 425px;
+    display: grid;
+    gap: 25px;
+}
+
+.itemImgDiv {
+    border: solid 2px #b45309;
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+.itemGroup > :first-child {
+    margin-left: 25px;
+}
+
+.itemGroup > :not(:first-child) {
+    margin-left: 50px;
+}
+
+.itemGroup .itemImgDiv {
+    margin-left: 125px;
 }

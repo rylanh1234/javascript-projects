@@ -38,13 +38,14 @@ footer {
 #main {
     padding: 50px;
     background-color: #fde68a;
-    width: 55vw;
+    width: max(45vw, 850px);
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
     /* grid-template-rows: repeat(4, auto); */
     justify-content: center;
     justify-items: center;
+    border-radius: 25px;
 }
 
 .mainContainers {
@@ -75,7 +76,7 @@ footer {
     padding: 5px;
     width: 750px;
     height: 60px;
-    background-color: #facc15;
+    background-color: #ffcc23;
     font-family: "Potta One", cursive;
     font-size: 2.5rem;
     font-weight: bold;
@@ -86,7 +87,8 @@ footer {
 }
 
 .mainGroup,
-.itemGroup {
+.itemGroup,
+.infoGroup {
     padding: 20px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
     background-color: #ffcc23;
@@ -104,7 +106,8 @@ footer {
 #endorsementContainer,
 #hoursContainer,
 #locationContainer,
-.itemContainer {
+.itemContainer,
+.infoContainer {
     clip-path: polygon(11% 0%, 89% 0%, 100% 21%, 100% 79%, 89% 100%, 11% 100%, 0% 79%, 0% 21%);
 }
 
@@ -164,17 +167,19 @@ footer {
     text-align: center;
 }
 
-.typeContainer {
+.typeContainer,
+#contactLabelContainer {
     height: 80px;
     width: 350px;
     clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
 }
 
-.itemType {
+.itemType,
+#contactLabel {
     padding: 5px;
-    height: 60px;
-    line-height: 60px;
-    width: 330px;
+    height: 70px;
+    line-height: 70px;
+    width: 340px;
     background-color: #ffcc23;
     clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
     font-family: "Potta One", cursive;
@@ -212,4 +217,37 @@ footer {
 
 .itemGroup .itemImgDiv {
     margin-left: 125px;
+}
+
+.contactContainer {
+    justify-items: center;
+}
+
+#contactLabelContainer {
+    margin-bottom: 100px;
+}
+
+#contactLabel {
+    font-size: 2.5rem;
+}
+
+.infoContainer {
+    height: 200px;
+    width: 450px;
+}
+
+.infoGroup {
+    height: 160px;
+    width: 410px;
+}
+
+.infoGroup > :first-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.infoGroup :not(:first-child) {
+    margin-left: 55px;
 }

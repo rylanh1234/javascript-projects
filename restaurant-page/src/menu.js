@@ -39,7 +39,6 @@ function menuPage() {
         type.classList.add("itemType");
         type.textContent = itemType;
         typeContainer.appendChild(type);
-        console.log(itemType)
         // divs for the menu items
         if (itemTypesIdx == 0) {
             beverages.forEach((beverage, beverageIdx) => {

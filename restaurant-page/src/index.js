@@ -1,10 +1,12 @@
 import "./styles.css";
 import { initPage } from "./home";
 import { menuPage } from "./menu";
+import { contactPage } from "./contact";
 
 const loadRestaurantPage = (function() {
     initPage();
     menuPage();
+    contactPage();
 }
 )();
 
@@ -34,7 +36,7 @@ const switchTab = (function () {
                         container.style.display = "none";
                     })
                     contactContainers.forEach((container) => {
-                        containerstyle.display = "none";
+                        container.style.display = "none";
                     })
                     menuContainers.forEach((container) => {
                         container.style.display = "grid";

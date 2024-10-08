@@ -1,6 +1,8 @@
 import honeycombPattern from "./assets/honeycombbg.jpg";
 import beeImg from "./assets/honeycomb.png";
 import honeycombImg from "./assets/bee.png";
+import dripping from "./assets/dripping.png";
+
 function initPage() {
     const content = document.querySelector("#content");
     const background = document.createElement("img");
@@ -80,10 +82,15 @@ function initPage() {
 
     const footer = document.createElement("footer");
     document.body.appendChild(footer);
+
+    const homeBtn = document.querySelector("#home");
+    const drippingImg = document.createElement("img");
+    drippingImg.src = dripping;
+    drippingImg.classList.add("drippingImg");
+    homeBtn.appendChild(drippingImg);
 }
 
 export { initPage };
 // <a href="https://www.flaticon.com/free-icons/bee" title="bee icons">Bee icons created by Smashicons - www.flaticon.com</a>
 // <a href="https://www.flaticon.com/free-icons/honeycomb" title="honeycomb icons">Honeycomb icons created by Freepik - www.flaticon.com</a>
 // <a href="https://www.freepik.com/free-vector/honey-comb-pattern_7997316.htm#fromView=search&page=1&position=10&uuid=6e0a4742-1530-4a88-aec9-5717a17f409f" title="honey comb patterns">Background image created by dgim-studio - www.freepik.com</a>
-// add a property that contains current tab, and only do something if button goes to different tab

@@ -251,3 +251,42 @@ footer {
 .infoGroup :not(:first-child) {
     margin-left: 55px;
 }
+
+nav {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: end;
+    gap: 25px;
+}
+
+nav button {
+    border: solid 1px black;
+    border-bottom: none;
+    /* border has rounded top corners and no bottom */
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    height: 4vh;
+    font-size: 1.1rem;
+    display: grid;
+    grid-template-rows: 100% 0%;
+    justify-content: center;
+    /* center text */
+    align-items: center;
+}
+
+nav #menu,
+nav #contact {
+    background-color: transparent;
+}
+
+nav #home {
+    background-color: #ECA43B;
+}
+
+.drippingImg {
+    width: 100px;
+    /* sets dripping to start of second row (bottom of button) */
+    align-self: start;
+}

@@ -1,6 +1,4 @@
 import honeycombPattern from "./assets/honeycombbg.jpg";
-import beeImg from "./assets/honeycomb.png";
-import honeycombImg from "./assets/bee.png";
 import dripping from "./assets/dripping.png";
 
 function initPage() {
@@ -53,7 +51,7 @@ function initPage() {
     hoursLabel.textContent = "Hours";
     const hours = document.createElement("ul");
     hours.classList.add("mainText");
-    const hoursArray = ["Sunday: 8am - 8pm", "Monday: 6am - 6pm", "Tuesday: 6am - 6pm", "Wednesday: 6am - 6pm", "Thursday: 6am - 10pm", "Friday: 6am - 10pm", "Saturday: 8am - 10pm", ]
+    const hoursArray = ["Sunday: 8am - 8pm", "Monday: 6am - 6pm", "Tuesday: 6am - 6pm", "Wednesday: 6am - 6pm", "Thursday: 6am - 10pm", "Friday: 6am - 10pm", "Saturday: 8am - 10pm",]
     hoursArray.forEach(day => {
         const liDay = document.createElement("li");
         liDay.textContent = day;
@@ -88,9 +86,24 @@ function initPage() {
     drippingImg.src = dripping;
     drippingImg.classList.add("drippingImg");
     homeBtn.appendChild(drippingImg);
+
+    const footerHoneyComb = document.createElement("a");
+    footerHoneyComb.setAttribute("href", "https://www.flaticon.com/free-icons/honeycomb");
+    footerHoneyComb.setAttribute("title", "honeycomb icons");
+    footerHoneyComb.textContent = "Honeycomb icons created by Freepik - www.flaticon.com";
+    footer.appendChild(footerHoneyComb);
+
+    const footerBee = document.createElement("a");
+    footerBee.setAttribute("href", "https://www.flaticon.com/free-icons/bee");
+    footerBee.setAttribute("title", "bee icons");
+    footerBee.textContent = "Bee icons created by Smashicons - www.flaticon.com";
+    footer.appendChild(footerBee);
+
+    const footerCombPattern = document.createElement("a");
+    footerCombPattern.setAttribute("href", "https://www.freepik.com/free-vector/honey-comb-pattern_7997316.htm#fromView=search&page=1&position=10&uuid=6e0a4742-1530-4a88-aec9-5717a17f409f");
+    footerCombPattern.setAttribute("title", "honey comb patterns");
+    footerCombPattern.textContent = "Background image created by dgim-studio - www.freepik.com";
+    footer.appendChild(footerCombPattern);
 }
 
 export { initPage };
-// <a href="https://www.flaticon.com/free-icons/bee" title="bee icons">Bee icons created by Smashicons - www.flaticon.com</a>
-// <a href="https://www.flaticon.com/free-icons/honeycomb" title="honeycomb icons">Honeycomb icons created by Freepik - www.flaticon.com</a>
-// <a href="https://www.freepik.com/free-vector/honey-comb-pattern_7997316.htm#fromView=search&page=1&position=10&uuid=6e0a4742-1530-4a88-aec9-5717a17f409f" title="honey comb patterns">Background image created by dgim-studio - www.freepik.com</a>

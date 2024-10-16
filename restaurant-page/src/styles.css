@@ -46,6 +46,7 @@ footer {
     justify-content: center;
     justify-items: center;
     border-radius: 25px;
+    position: relative;
 }
 
 .mainContainers {
@@ -84,6 +85,7 @@ footer {
     /* create octagonal shape by specifying the xy coord of the corners
     start at topleft and clockwise */
     clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
+    position: relative;
 }
 
 .mainGroup,
@@ -167,15 +169,13 @@ footer {
     text-align: center;
 }
 
-.typeContainer,
-#contactLabelContainer {
+.typeContainer {
     height: 80px;
     width: 350px;
     clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
 }
 
-.itemType,
-#contactLabel {
+.itemType {
     padding: 5px;
     height: 70px;
     line-height: 70px;
@@ -186,6 +186,7 @@ footer {
     font-size: 2rem;
     font-weight: bold;
     text-align: center; 
+    position: relative;
 }
 
 .itemContainer {
@@ -225,10 +226,23 @@ footer {
 
 #contactLabelContainer {
     margin-bottom: 100px;
+    height: 130px;
+    width: 350px;
+    clip-path: polygon(6% 0%, 94% 0%, 100% 33.3%, 100% 66.6%, 94% 100%, 6% 100%, 0% 66.6%, 0% 33.3%);
 }
 
 #contactLabel {
     font-size: 2.5rem;
+    position: relative;
+    padding: 5px;
+    height: 120px;
+    line-height: 120px;
+    width: 340px;
+    background-color: #ffcc23;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 33.3%, 100% 66.6%, 95% 100%, 5% 100%, 0% 66.6%, 0% 33.3%);
+    font-family: "Potta One", cursive;
+    font-weight: bold;
+    text-align: center; 
 }
 
 .infoContainer {
@@ -289,4 +303,50 @@ nav #home {
     width: 100px;
     /* sets dripping to start of second row (bottom of button) */
     align-self: start;
+}
+
+.beeImg {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.beeLeft {
+    top: 5px;
+    left: 30px;
+}
+
+.beeRight {
+    bottom: 1px;
+    right: 37px;
+}
+
+.honeyCombLarge {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 210px;
+    left: 420px;
+}
+
+.honeyCombSmall {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    right: 5px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: black;
 }
